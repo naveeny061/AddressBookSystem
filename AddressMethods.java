@@ -11,7 +11,7 @@ public class AddressMethods {
 		Address address = new Address();
 		addressBook.add(address);
 	}
-	
+
 	void Show() {
 		Iterator itr = addressBook.iterator();
 		while (itr.hasNext()) {
@@ -95,7 +95,8 @@ public class AddressMethods {
 				for (int i = 0; i < addressBook.size(); i++) {
 					if (addressBook.get(i).getFirst_Name().equalsIgnoreCase(name)) {
 						Address address = addressBook.get(i);
-						address.setEmail(Email);;
+						address.setEmail(Email);
+						;
 					}
 				}
 				break;
@@ -103,6 +104,17 @@ public class AddressMethods {
 				return;
 			default:
 				System.out.println("Please Enter Correct Option");
+			}
+		}
+	}
+
+	void Delete() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Enter the Name whose data to delete");
+		String name = scanner.next();
+		for (int i = 0; i < addressBook.size(); i++) {
+			if (addressBook.get(i).getFirst_Name().equalsIgnoreCase(name)) {
+				addressBook.remove(i);
 			}
 		}
 	}
