@@ -21,6 +21,8 @@ public class AddressMethods {
 			System.out.println(
 					"City- " + address.getCity() + "  State-  " + address.getState() + "  Zip-  " + address.getZip());
 			System.out.println("Phone Number- " + address.getPhone_Number());
+			System.out.println("Email- " + address.getEmail());
+			System.out.println("--------------------------");
 		}
 	}
 
