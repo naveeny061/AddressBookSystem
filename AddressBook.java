@@ -1,12 +1,12 @@
 package com.javapractice;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class AddressBook {
 
-	public static void main(String[] arg) {
-		System.out.println("Welcome to Address book");
-		AddressMethods addressMethod = new AddressMethods();
+	void address_Book(AddressMethods addressMethod) {
 		while (true) {
 			System.out.println("Press 1 : Add Contact");
 			System.out.println("Press 2 : Edit Contact");
@@ -34,7 +34,31 @@ public class AddressBook {
 				System.out.println("Please Enter Correct Option");
 			}
 		}
+	}
 
+	public static void main(String[] arg) {
+		System.out.println("Welcome to Address book");
+		Map<String, AddressMethods> addressbookMap = new HashMap<String, AddressMethods>();
+		String name = null;
+		while (true) {
+
+			System.out.println("Enter the Address book name");
+			Scanner scanner = new Scanner(System.in);
+			name = scanner.nextLine();
+			AddressMethods addressMethods = addressbookMap.get(name);
+			if (addressMethods == null) {
+				addressMethods = new AddressMethods();
+				addressbookMap.put(name, addressMethods);
+			}
+
+			AddressBook book = new AddressBook();
+			book.address_Book(addressMethods);
+			System.out.println("Press 1 : Want to enter in other addressbook");
+			System.out.println("Press any other digit to exit");
+			String choise = scanner.nextLine();
+			if (!choise.equals("1"))
+				break;
+		}
 	}
 
 }
