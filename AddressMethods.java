@@ -6,7 +6,7 @@ public class AddressMethods {
 	ArrayList<Address> addressBook = new ArrayList<Address>();
 
 	void Add() {
-		Address address = new Address();
-		addressBook.add(address);
+		 Address address = new Address();
+		 addressBook.add(address);
 	}
 }
